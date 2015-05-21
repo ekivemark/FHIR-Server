@@ -36,7 +36,7 @@ public class FhirContextFactory implements FactoryBean<FhirContext>, Initializin
 
 	private FhirContext myCtx;
 
-	 public FhirContextFactory() {
+	public FhirContextFactory() {
 	}
 	
 	@Override

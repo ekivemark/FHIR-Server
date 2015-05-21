@@ -25,15 +25,20 @@
 								<object data="img/fhirtest-architecture.svg" width="383" height="369" type="image/svg+xml"></object>
 							</div>
 							<p>
-								This server provides a nearly complete implementation of the FHIR Specification
-								using a 100% open source software stack. It is hosted by University Health Network.
+								This server provides an implementation of the FHIR Specification as the basis for
+								the implementation of BlueButton as a Data Service
+								using a 100% open source software stack. It is hosted by HHS in the AWS Cloud.
 							</p>
 							<p>
 								The architecture in use here is shown in the image on the right. This server is built
-								from a number of modules of the 
-								<a href="https://github.com/jamesagnew/hapi-fhir/">HAPI FHIR</a>
-								project, which is a 100% open-source (Apache 2.0 Licensed) Java based
+								from a number of modules. The base implementation is here:
+								<a href="https://github.com/jamesagnew/hapi-fhir/">HAPI FHIR Project by James Agnew</a>
+								, which is a 100% open-source (Apache 2.0 Licensed) Java based
 								implementation of the FHIR specification.
+							</p>
+							<p>
+								The source code for this specific implementation can be found here: <a href="https://github.com/ekivemark/FHIR-Server/">Ekivemark's GitHub</a>.
+								This in turn is forked from the amazing work done by Gajen Sunthara: <a href="https://github.com/gajen0981/FHIR-Server/">FHIR Server</a>
 							</p>
 							<p>
 								
@@ -42,16 +47,16 @@
 					</div>
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h3 class="panel-title">Data On This Server</h3>
+							<h3 class="panel-title">BlueButton Data On This Server</h3>
 						</div>
 						<div class="panel-body">
 							<p>
 								This server is regularly loaded with a standard set of test data sourced
-								from UHN's own testing environment. Do not use this server to store any data
+								from CMS' own testing environment. Do not use this server to store any data
 								that you will need later, as we will be regularly resetting it. 
 							</p>
 							<p>
-								This is not a production server and it provides no privacy. Do not store any
+								This is not a production server and it provides no privacy. <br/>Do not store any
 								confidential data here.
 							</p>
 						</div>

@@ -2,11 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-	<parent>
-		<groupId>org.sonatype.oss</groupId>
-		<artifactId>oss-parent</artifactId>
-		<version>9</version>
-	</parent>
+	<!--<parent>-->
+		<!--<groupId>org.sonatype.oss</groupId>-->
+		<!--<artifactId>oss-parent</artifactId>-->
+		<!--<version>9</version>-->
+	<!--</parent>-->
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ca.uhn.hapi.fhir</groupId>
@@ -16,9 +16,13 @@
 	<name>HAPI-FHIR</name>
 	<url>http://hl7api.sourceforge.net/hapi-fhir/</url>
 
+	<!--<organization>-->
+		<!--<name>University Health Network</name>-->
+		<!--<url>http://www.uhn.ca</url>-->
+	<!--</organization>-->
 	<organization>
-		<name>University Health Network</name>
-		<url>http://www.uhn.ca</url>
+		<name>Centers for Medicare and Medicaid Services</name>
+		<url>http://www.cms.gov</url>
 	</organization>
 
 	<inceptionYear>2014</inceptionYear>
@@ -136,6 +140,16 @@
 			<id>mochaholic</id>
 			<name>Mohammad Jafari</name>
 			<organization>Edmond Scientific Company</organization>
+		</developer>
+		<developer>
+			<id>gajen0821</id>
+			<name>Gajen Sunthara</name>
+			<organization>The White House</organization>
+		</developer>
+		<developer>
+			<id>ekivemark</id>
+			<name>Mark Scrimshire</name>
+			<organization>CMS/ HHS IDEA Lab</organization>
 		</developer>
 	</developers>
 

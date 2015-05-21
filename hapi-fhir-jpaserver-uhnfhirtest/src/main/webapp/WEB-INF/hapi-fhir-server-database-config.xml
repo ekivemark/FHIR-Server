@@ -9,6 +9,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
 	<!--JDBC Datasource from a RDBMS systems-->
+	<!-- MySQL
 	<bean id="myPersistenceDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
 		<property name="url" value="jdbc:mysql://localhost:3306/fhir"/>
@@ -16,6 +17,16 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 		<property name="password" value="root"/>
 		<property name="validationQuery" value="SELECT 1"/>
 	</bean>
+	-->
+
+	<bean id="myPersistenceDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="org.postgresql.Driver"/>
+		<property name="url" value="jdbc:postgresql://localhost:5432/fhir"/>
+		<property name="username" value="postgres"/>
+		<property name="password" value="fh1rSQL"/>
+		<property name="validationQuery" value="SELECT 1"/>
+	</bean>
+
 
 	<!--<bean depends-on="dbServer" id="myEntityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">-->
 	<bean id="myEntityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
@@ -24,9 +35,11 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 		<property name="persistenceUnitName" value="FHIR_UT" />
 		<property name="jpaVendorAdapter">
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-				<property name="showSql" value="false" />
+				<!--  switching showSql from false -->
+				<property name="showSql" value="true" />
 				<property name="generateDdl" value="true" />
-				<property name="databasePlatform" value="org.hibernate.dialect.MySQL5Dialect" />
+				<!-- replace with PostgreSQLDialect -->
+				<property name="databasePlatform" value="org.hibernate.dialect.PostgreSQLDialect" />
 			</bean>
 		</property>
 	</bean>

@@ -235,11 +235,23 @@ public class FhirContext {
 		 * TODO: this is a bit of a hack, really we should have a translation table based on a property file or
 		 * something so that we can detect names like diagnosticreport
 		 */
+
+		/*
+		moved Validate step to see if it fixes no resource name error.
+		set resourceName to Patient if blank
+		  */
+
+		if (resourceName == "") {
+			// default to Patient on blank
+			resourceName = "Patient";
+		}
+		Validate.notBlank(resourceName, "Resource name must not be blank");
+
 		if (Character.isLowerCase(resourceName.charAt(0))) {
 			resourceName = WordUtils.capitalize(resourceName);
 		}
 
-		Validate.notBlank(resourceName, "Resource name must not be blank");
+//		Validate.notBlank(resourceName, "Resource name must not be blank");
 
 		RuntimeResourceDefinition retVal = myNameToElementDefinition.get(resourceName);
 

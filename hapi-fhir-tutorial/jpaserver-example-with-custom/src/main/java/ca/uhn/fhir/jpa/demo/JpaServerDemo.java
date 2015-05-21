@@ -41,7 +41,8 @@ public class JpaServerDemo extends RestfulServer {
 		 * We want to support FHIR DSTU2 format. This means that the server
 		 * will use the DSTU2 bundle format and other DSTU2 encoding changes.
 		 *
-		 * If you want to use DSTU1 instead, change the following line, and change the 2 occurrences of dstu2 in web.xml to dstu1
+		 * If you want to use DSTU1 instead, change the following line,
+		 * and change the 2 occurrences of dstu2 in web.xml to dstu1
 		 */
 		FhirVersionEnum fhirVersion = FhirVersionEnum.DSTU2;
 		setFhirContext(new FhirContext(fhirVersion));

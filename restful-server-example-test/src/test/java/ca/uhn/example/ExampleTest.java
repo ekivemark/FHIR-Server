@@ -33,7 +33,8 @@ public class ExampleTest {
 	}
 
 	/**
-	 * Tests here have some weird windows inconsistency relating to the path for finding the WAR file. Since this test isn't really important to work multiplatform, we can skip it
+	 * Tests here have some weird windows inconsistency relating to the path for finding the WAR file.
+	 * Since this test isn't really important to work multi-platform, we can skip it
 	 */
 	public static boolean isWindows() {
 		return System.getProperty("os.name").startsWith("Windows");

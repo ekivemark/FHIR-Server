@@ -39,9 +39,9 @@
       FITNESS FOR A PARTICULAR PURPOSE.
     
   HL7:
-    The schema has been modified to remoce the definitions of elements that 
+    The schema has been modified to remove the definitions of elements that
     are not allowed to be used in FHIR's restricted XHTML set. All modifications
-    are lablled with "fhir-remove"
+    are labelled with "fhir-remove"
     
     If the existence of a different schema with the same namespace is a problem,
     you can drop in the standard W3C schema (http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd)

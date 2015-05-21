@@ -79,7 +79,8 @@
 					<skip>true</skip>
 				</configuration>
 			</plugin>
-		</plugins>		
+		</plugins>
+		<finalName>fhir-server</finalName>
 	</build>
 
 </project>

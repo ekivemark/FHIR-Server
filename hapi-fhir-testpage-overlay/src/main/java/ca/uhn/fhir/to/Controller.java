@@ -350,6 +350,10 @@ public class Controller {
 			throw new IllegalStateException("Unknown FHIR version: " + theRequest.getFhirVersion(myConfig));
 		}
 
+		// add logging to work out what is going on !haveSearchParams crashes thymeleaf
+
+		ourLog.info(logPrefix(theModel) + "haveSearchParams: {}", haveSearchParams);
+
 		theModel.put("includes", includes);
 		theModel.put("queries", queries);
 		theModel.put("haveSearchParams", haveSearchParams);

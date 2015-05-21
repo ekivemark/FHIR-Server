@@ -5,11 +5,11 @@
 	HAPI projects use the Sonatype OSS parent project. 
 	You do not need to use this in your own projects.
 	-->
-	<parent>
-		<groupId>org.sonatype.oss</groupId>
-		<artifactId>oss-parent</artifactId>
-		<version>7</version>
-	</parent>
+	<!--<parent>-->
+		<!--<groupId>org.sonatype.oss</groupId>-->
+		<!--<artifactId>oss-parent</artifactId>-->
+		<!--<version>7</version>-->
+	<!--</parent>-->
 
 	
 	<groupId>ca.uhn.hapi.example</groupId>
@@ -161,7 +161,7 @@
 			
 			<!-- 
 			This plugin is just a part of the HAPI internal build process, you do not
-			need to incude it in your own projects
+			need to include it in your own projects
 			-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

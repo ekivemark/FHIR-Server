@@ -31,7 +31,8 @@ import ca.uhn.fhir.rest.server.exceptions.ResourceNotFoundException;
 import ca.uhn.fhir.rest.server.exceptions.UnprocessableEntityException;
 
 /**
- * This is a resource provider which stores Patient resources in memory using a HashMap. This is obviously not a production-ready solution for many reasons, 
+ * This is a resource provider which stores Patient resources in memory using a HashMap.
+ * This is obviously not a production-ready solution for many reasons,
  * but it is useful to help illustrate how to build a fully-functional server.
  */
 public class PatientResourceProvider implements IResourceProvider {
@@ -89,7 +90,8 @@ public class PatientResourceProvider implements IResourceProvider {
 		}
 
 		/*
-		 * PUBLISHED time will always be set to the time that the first version was stored. UPDATED time is set to the time that the new version was stored.
+		 * PUBLISHED time will always be set to the time that the first version was stored.
+		 * UPDATED time is set to the time that the new version was stored.
 		 */
 		thePatient.getResourceMetadata().put(ResourceMetadataKeyEnum.PUBLISHED, publishedDate);
 		thePatient.getResourceMetadata().put(ResourceMetadataKeyEnum.UPDATED, InstantDt.withCurrentTime());
@@ -124,13 +126,18 @@ public class PatientResourceProvider implements IResourceProvider {
 	}
 
 	/**
-	 * The "@Search" annotation indicates that this method supports the search operation. You may have many different method annotated with this annotation, to support many different search criteria.
+	 * The "@Search" annotation indicates that this method supports the search operation.
+	 * You may have many different method annotated with this annotation, to support many different search criteria.
 	 * This example searches by family name.
 	 * 
 	 * @param theFamilyName
-	 *            This operation takes one parameter which is the search criteria. It is annotated with the "@Required" annotation. This annotation takes one argument, a string containing the name of
-	 *            the search criteria. The datatype here is StringDt, but there are other possible parameter types depending on the specific search criteria.
-	 * @return This method returns a list of Patients. This list may contain multiple matching resources, or it may also be empty.
+	 *            This operation takes one parameter which is the search criteria.
+	 *            It is annotated with the "@Required" annotation. This annotation takes one argument,
+	 *            a string containing the name of the search criteria.
+	 *            The datatype here is StringDt, but there are other possible parameter types depending on the
+	 *            specific search criteria.
+	 * @return This method returns a list of Patients.
+	 * This list may contain multiple matching resources, or it may also be empty.
 	 */
 	@Search()
 	public List<Patient> findPatientsByName(@RequiredParam(name = Patient.SP_FAMILY) StringDt theFamilyName) {
@@ -168,7 +175,8 @@ public class PatientResourceProvider implements IResourceProvider {
 	
 	
 	/**
-	 * The getResourceType method comes from IResourceProvider, and must be overridden to indicate what type of resource this provider supplies.
+	 * The getResourceType method comes from IResourceProvider, and must be overridden
+	 * to indicate what type of resource this provider supplies.
 	 */
 	@Override
 	public Class<Patient> getResourceType() {

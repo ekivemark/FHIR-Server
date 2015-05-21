@@ -5,10 +5,11 @@
 		<param-name>org.jboss.as.jaxrs.disableSpringIntegration</param-name>
 		<param-value>true</param-value>
 	</context-param>
-	<!---------------------------------------------------------------------------------------------->
+	<!-- ======================================================================================== -->
 
-	<!-- The following entries are all here to enable the tester web application, and are not actually a part of the underlying FHIR server. -->
-	<!---------------------------------------------------------------------------------------------->
+	<!-- The following entries are all here to enable the tester web application,
+	     and are not actually a part of the underlying FHIR server. -->
+	<!-- ======================================================================================== -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
@@ -37,7 +38,7 @@
 		<servlet-name>spring</servlet-name>
 		<url-pattern>/tester/*</url-pattern>
 	</servlet-mapping>
-	<!---------------------------------------------------------------------------------------------->
+	<!-- ==================================================================================================== -->
 
 	<!-- This filters provide support for Cross Origin Resource Sharing (CORS) -->
 	<filter>

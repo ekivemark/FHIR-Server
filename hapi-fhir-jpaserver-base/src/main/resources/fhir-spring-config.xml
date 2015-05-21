@@ -14,14 +14,19 @@
 	<context:mbean-server />
 
 	<bean id="myPersistenceDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" lazy-init="true">
-		<property name="url" value="jdbc:derby:memory:myUnitTestDB;create=true" />
+		<!-- <property name="url" value="jdbc:derby:memory:myUnitTestDB;create=true" /> -->
+		<property name="url" value="jdbc:postgresql://localhost:5432/fhir;create=true" />
 	</bean>
 
 	<bean id="myPersistenceDataSource2" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" lazy-init="true">
 		<!-- <property name="url" value="jdbc:hsqldb:mem:unit-testing-jpa"/>  -->
 		<!-- <property name="url" value="jdbc:hsqldb:file:svcret.hsqldb" /> -->
-		<property name="url" value="jdbc:derby:memory:myUnitTestDB;create=true" />
-		<!-- 
+		<!-- <property name="url" value="jdbc:derby:memory:myUnitTestDB;create=true" /> -->
+		<property name="url" value="jdbc:postgresql://localhost:5432/fhir;create=true" />
+		<property name="username" value="postgres" />
+		<property name="password" value="fh1rSQL" />
+
+		<!--
 		<property name="username" value="sa" />
 		<property name="password" value="" />
 		-->
@@ -32,10 +37,12 @@
 		<property name="persistenceUnitName" value="FHIR_UT" />
 		<property name="jpaVendorAdapter">
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-				<property name="showSql" value="false" />
+				<!--<property name="showSql" value="false" />-->
+				<property name="showSql" value="true" />
 				<property name="generateDdl" value="true" />
+				<property name="databasePlatform" value="org.hibernate.dialect.postgreSQLDialect" />
 				<!-- <property name="databasePlatform" value="org.hibernate.dialect.HSQLDialect" />  -->
-				<property name="databasePlatform" value="org.hibernate.dialect.DerbyTenSevenDialect" />
+				<!-- <property name="databasePlatform" value="org.hibernate.dialect.DerbyTenSevenDialect" /> -->
 			</bean>
 		</property>
 	</bean>

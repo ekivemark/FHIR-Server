@@ -43,8 +43,8 @@ public class ExampleRestfulServlet extends RestfulServer {
 
 		/*
 		 * Tells HAPI to use content types which are not technically FHIR compliant when a browser is detected as the
-		 * requesting client. This prevents browsers from trying to download resource responses instead of displaying them
-		 * inline which can be handy for troubleshooting.
+		 * requesting client. This prevents browsers from trying to download resource responses instead of displaying
+		 * them inline which can be handy for troubleshooting.
 		 */
 		setUseBrowserFriendlyContentTypes(true);
 		

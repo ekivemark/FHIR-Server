@@ -22,16 +22,23 @@
 		
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
-			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+			<!-- <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+			-->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.postgreSQLDialect" />
 
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 
-			<property name="hibernate.connection.username" value="root" />
-			<property name="hibernate.connection.password" value="root" />
+			<!-- change user and password from root/root-->
+			<property name="hibernate.connection.username" value="postgres" />
+			<property name="hibernate.connection.password" value="fh1rSQL" />
 
 			<property name="hibernate.jdbc.batch_size" value="0" />
 			<property name="hibernate.cache.use_minimal_puts" value="false" />
-			<property name="hibernate.show_sql" value="false" />
+
+			<!-- <property name="hibernate.show_sql" value="false" />
+			 change to true-->
+			<property name="hibernate.show_sql" value="true" />
+
 			<property name="hibernate.cache.use_query_cache" value="false" />
 			<property name="hibernate.cache.use_second_level_cache" value="false" />
 			<property name="hibernate.cache.use_structured_entries" value="false" />

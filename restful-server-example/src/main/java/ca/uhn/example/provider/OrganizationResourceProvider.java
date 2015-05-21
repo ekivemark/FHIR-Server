@@ -31,17 +31,19 @@ public class OrganizationResourceProvider implements IResourceProvider {
 	}
 
 	/**
-	 * The "@Read" annotation indicates that this method supports the read operation. It takes one argument, the Resource type being returned.
+	 * The "@Read" annotation indicates that this method supports the read operation.
+	 * It takes one argument, the Resource type being returned.
 	 * 
 	 * @param theId
-	 *            The read operation takes one parameter, which must be of type IdDt and must be annotated with the "@Read.IdParam" annotation.
+	 *            The read operation takes one parameter, which must be of type IdDt and must be
+	 *            annotated with the "@Read.IdParam" annotation.
 	 * @return Returns a resource matching this identifier, or null if none exists.
 	 */
 	@Read()
 	public MyOrganization getResourceById(@IdParam IdDt theId) {
 		
 		/*
-		 * We only support one organization, so the follwing
+		 * We only support one organization, so the following
 		 * exception causes an HTTP 404 response if the 
 		 * ID of "1" isn't used.
 		 */
