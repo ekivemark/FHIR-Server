@@ -28,7 +28,7 @@ Untethered PHR and patient download and share the data with heatlhcare providers
 Untethered Personal Health Repository - Patient imports FHIR files from multiple health systems.
 Rich Health Meaningful Info - With visually appealing mobile app, patients able to take control of their health and empower it. 
 Share and Proxy Access - Share the data with other healthcare providers and give and authorize 3rd party applications to get access to their data. 
-Donate for Research & Science - Donate the data for research & science (or Precision Medicine Initiatives).
+Donate for Research & Science - Donate the data for research & science (or Precision Medicine Initiates).
 
 End point app is in the early stages of developments. 
 ![alt tag](https://github.com/gajen0981/FHIR-Server/blob/master/screenshots/PHR.png)
