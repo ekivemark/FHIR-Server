@@ -12,7 +12,9 @@ Healthcare Interoperability using HL7's FHIR standards over HTTPS transport (RES
 
 WHAT
 ----
-HAPI based FHIR server with Blue Button 2.0 capabilities. Able to download the files in FHIR JSON or FHIR XML for untethered PHR. Imagine this Blue Button functionality is implemented in every patient portal to free the data to patient and have them empower and take control of their health. Also provides dynamic API access to patient health info for 3rd party applications. 
+HAPI based FHIR server with Blue Button 2.0 capabilities. Able to download the files in FHIR JSON or FHIR XML for untethered PHR. 
+Imagine this Blue Button functionality is implemented in every patient portal to free the data to patient and have them 
+empower and take control of their health. Also provides dynamic API access to patient health info for 3rd party applications. 
 
 ### Blue Button 2.0 capabilities => Download everything for a patient as a FHIR Bundle
 Download the healthcare data as FHIR JSON or FHIR XML format. 
@@ -20,11 +22,11 @@ Download the healthcare data as FHIR JSON or FHIR XML format.
 ![alt tag](https://github.com/gajen0981/FHIR-Server/blob/master/screenshots/BB2Download.png)
 
 ### Blue Button 2.0 capabilities
-Untethered PHR and patient download and share the data with heatlhcare providers. 
+Untethered PHR and patient download and share the data with healthcare providers. 
 
 ![alt tag](https://github.com/gajen0981/FHIR-Server/blob/master/screenshots/BB2DownloadedFiles.png)
 
-### Example Personal Healh Record Use Case
+### Example Personal Health Record Use Case
 Untethered Personal Health Repository - Patient imports FHIR files from multiple health systems.
 Rich Health Meaningful Info - With visually appealing mobile app, patients able to take control of their health and empower it. 
 Share and Proxy Access - Share the data with other heatlhcare providers and give and authorize 3rd party applications to get access to their data. 
@@ -63,11 +65,12 @@ Include the MySQL (or any RDBMS)
 ### Database Configuration
 DB Connection configuration with DB credentials and create a database name "fhir".
 
-      hapi-fhir-jpaserver-uhnfhirtest -> src -> main -> webapp -> WEB-INF -> hapi-fhir-tester-config.xml
+      hapi-fhir-jpaserver-uhnfhirtest -> src -> main -> webapp -> WEB-INF -> hapi-fhir-server-database-config.xml
       
 ![alt tag](https://github.com/gajen0981/FHIR-Server/blob/master/screenshots/dbConnectionConfig.png)
 
-Configuration XML
+Configuration XML - MySQL
+
 
 ```xml
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -106,6 +109,36 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 </beans>
 ```
 
+Configuration XML - PostgreSQL
+
+```
+	<bean id="myPersistenceDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="org.postgresql.Driver"/>
+		<property name="url" value="jdbc:postgresql://localhost:5432/fhir"/>
+		<property name="username" value="postgres"/>
+		<property name="password" value="password"/>
+		<property name="validationQuery" value="SELECT 1"/>
+	</bean>
+
+
+	<!--<bean depends-on="dbServer" id="myEntityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">-->
+	<bean id="myEntityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="myPersistenceDataSource" />
+		<property name="persistenceXmlLocation" value="classpath:META-INF/fhirtest_persistence.xml" />
+		<property name="persistenceUnitName" value="FHIR_UT" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+				<!--  switching showSql from false -->
+				<property name="showSql" value="true" />
+				<property name="generateDdl" value="true" />
+				<!-- replace with PostgreSQLDialect -->
+				<property name="databasePlatform" value="org.hibernate.dialect.PostgreSQLDialect" />
+			</bean>
+		</property>
+	</bean>
+
+```
+
 ### Modify SpringMVC persistence configuration
 To choose the database type and version dialect.
 
@@ -113,10 +146,23 @@ To choose the database type and version dialect.
       
 ![alt tag](https://github.com/gajen0981/FHIR-Server/blob/master/screenshots/persistence.png)
 
-Configuration XML
+Configuration XML - MySQL
 ```xml
 <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
 ```
+
+Configuration XML - PostgreSQL
+'''
+<property name="hibernate.dialect" value="org.hibernate.dialect.postgreSQLDialect" />
+
+'''
+
+Make sure Username and Password match the settings in hapi-fhir-server-database-config.xml
+'''
+			<!-- change user and password from root/root-->
+			<property name="hibernate.connection.username" value="postgres" />
+			<property name="hibernate.connection.password" value="fh1rSQL" />
+'''
 
 ### Add JBoss application server system properties for the local server base URL
 Important if you want to connect the FHIR server to its local DB 

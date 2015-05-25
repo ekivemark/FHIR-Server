@@ -168,6 +168,12 @@
 		-->
 		<hapi_stable_version>0.9</hapi_stable_version>
 
+		<bbon_fhir_server_description>BlueButton on FHIR Server</bbon_fhir_server_description>
+		<bbon_fhir_root_name>fhir-p</bbon_fhir_root_name>
+		<bbon_fhir_server_name>BBonfhir</bbon_fhir_server_name>
+		<bbon_fhir_http_prefix>http://</bbon_fhir_http_prefix>
+		<bbon_fhir_url>test.bbonfhir.com:8080/</bbon_fhir_url>
+
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		
 		<!-- For site-deploy -->

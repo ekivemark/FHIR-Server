@@ -9,13 +9,22 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
+	<!--
+		<bbon_fhir_server_description>BlueButton on FHIR Server</bbon_fhir_server_description>
+		<bbon_fhir_root_name>fhir-p</bbon_fhir_root_name>
+		<bbon_fhir_server_name>BBonfhir</bbon_fhir_server_name>
+		<bbon_fhir_http_prefix>http://</bbon_fhir_http_prefix>
+		<bbon_fhir_url>test.bbonfhir.com:8080/</bbon_fhir_url>
+
+	-->
+
 	<bean class="ca.uhn.fhir.to.TesterConfig">
 		<property name="servers">
 			<list>
-				<value>local     , DSTU1 , Local Gaj's Server (DSTU1 FHIR)             , http://localhost:8080/fhir/baseDstu1</value>
-				<value>local     , DSTU2 , Local Gaj's Server (DSTU2 FHIR)             , http://localhost:8080/fhir/baseDstu2</value>
-				<value>bbonfhir     , DSTU1 , AWS BBonFHIR Server (DSTU1 FHIR)             , http://test.bbonfhir.com:8080/fhir/baseDstu1</value>
-				<value>bbonfhir_dev , DSTU2 , AWS BBonFHIR Server (DSTU2 FHIR)             , http://test.bbonfhir.com:8080/fhir/baseDstu2</value>
+				<value>local     , DSTU1 , Local BlueButton on FHIR Server (fhir-p/DSTU1 FHIR)   , http://localhost:8080/fhir-p/baseDstu1</value>
+				<value>local     , DSTU2 , Local BlueButton on FHIR Server (fhir-p/DSTU2 FHIR)   , http://localhost:8080/fhir-p/baseDstu2</value>
+				<value>bbonfhir     , DSTU1 , AWS BlueButton on FHIR Server (fhir-p/DSTU1 FHIR)  , http://test.bbonfhir.com:8080/fhir-p/baseDstu1</value>
+				<value>bbonfhir_dev , DSTU2 , AWS BlueButton on FHIR Server (fhir-p/DSTU2 FHIR)  , http://test.bbonfhir.com:8080/fhir-p/baseDstu2</value>
 				<value>home     , DSTU1 , UHN/HAPI Server (DSTU1 FHIR)                 , http://fhirtest.uhn.ca/baseDstu1</value>
 				<value>home_dev , DSTU2 , UHN/HAPI Server (DSTU2 FHIR)                 , http://fhirtest.uhn.ca/baseDstu2</value>
 				<value>home     , DSTU1 , UHN/HAPI Server (DSTU1 FHIR)                 , http://fhirtest.uhn.ca/baseDstu1</value>
