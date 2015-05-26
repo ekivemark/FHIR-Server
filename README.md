@@ -115,7 +115,7 @@ Configuration XML - PostgreSQL
 	<bean id="myPersistenceDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="org.postgresql.Driver"/>
 		<property name="url" value="jdbc:postgresql://localhost:5432/fhir"/>
-		<property name="username" value="postgres"/>
+		<property name="username" value="dbuser"/>
 		<property name="password" value="password"/>
 		<property name="validationQuery" value="SELECT 1"/>
 	</bean>
@@ -161,8 +161,8 @@ Configuration XML - PostgreSQL
 Make sure Username and Password match the settings in hapi-fhir-server-database-config.xml
 ```
 			<!-- change user and password from root/root-->
-			<property name="hibernate.connection.username" value="postgres" />
-			<property name="hibernate.connection.password" value="fh1rSQL" />
+			<property name="hibernate.connection.username" value="dbuser" />
+			<property name="hibernate.connection.password" value="password" />
 ```
 
 ### Add JBoss application server system properties for the local server base URL
