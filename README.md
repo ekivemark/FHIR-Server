@@ -152,17 +152,18 @@ Configuration XML - MySQL
 ```
 
 Configuration XML - PostgreSQL
-'''
+
+```
 <property name="hibernate.dialect" value="org.hibernate.dialect.postgreSQLDialect" />
 
-'''
+```
 
 Make sure Username and Password match the settings in hapi-fhir-server-database-config.xml
-'''
+```
 			<!-- change user and password from root/root-->
 			<property name="hibernate.connection.username" value="postgres" />
 			<property name="hibernate.connection.password" value="fh1rSQL" />
-'''
+```
 
 ### Add JBoss application server system properties for the local server base URL
 Important if you want to connect the FHIR server to its local DB 
